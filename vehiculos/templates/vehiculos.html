@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+<a href="{% url 'vehiculos_nuevo' %}">  Vehiculo Nuevo    </a >
+<br>
+<h3 style="color: blueviolet;">
+
+    <center> VEHICULOS </center>
+    </h3>
+{% if user.is_authenticated %}
+{% for vehiculos in Todos_Vehiculos %}
+
+<a href="{% url 'vehiculos_detalle' vehiculos.pk %}" >{{vehiculos}}  </a>
+<p>{{vehiculos.Serie}}</p>
+
+
+<div class="card" style="width: 18rem;">
+   
+    <img src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo-shadow.png" class="card-img-top" alt="...">
+   
+    <div class="card-body">
+      
+      <h2 class="card-title">Nombre:{{ vehiculos.Nombre}}</h2>
+      <h3><p class="card-text">{{ vehiculos.Descripcion}}</p> </31>
+      <p class="card-text"><small class="text-muted"> autor:{{ vehiculos.autor}}</small></p>
+     </div>
+    <ul class="list-group list-group-flush">
+        
+{% endfor %}
+
+{% endif %}
+
+{% endblock content %}

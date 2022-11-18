@@ -1,0 +1,17 @@
+<h1 style="color: blueviolet;">
+    <!--<center>Entregas Detalle</center>-->
+
+</h1>
+{% extends 'base.html' %}
+{% block content %}
+
+<table class="table table-dark table-striped">
+    <tr> <td>Fecha</td><td>Serie</td> <td>Cliente</td> </tr> 
+<tr>
+    <td>{{entregas.Fecha}}</td>
+    <td>{{entregas.Serie}}</td>
+    <td>{{entregas.Cliente}}</td>
+    
+</tr>
+
+{% endblock content %}
