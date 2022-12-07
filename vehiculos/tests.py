@@ -41,3 +41,16 @@ class CustomUserTests(TestCase):
     def setUp(self):
         url = reverse('home')
         self.response = self.client.get(url)
+
+    def test_language_using_header(self):
+       response = self.client.get('/', HTTP_ACCEPT_LANGUAGE='fr')
+       self.assertEqual(response.content, b"Bienvenue sur mon site.")
+
+    def test_details(self):
+       # Issue a GET request.
+        response = self.client.get('vehiculos/2/')
+
+        # Check that the response is 200 OK.
+        self.assertEqual(response.status_code, 200)
+        # Check that the rendered context contains 5 customers.
+        self.assertEqual(len(response.context['vehiculos']), 5)

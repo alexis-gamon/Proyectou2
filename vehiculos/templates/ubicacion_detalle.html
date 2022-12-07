@@ -1,24 +1,23 @@
 
 {% extends 'base.html' %}
 {% block content %}
-<h3 style="color: blueviolet;">
-    <center>VEHICULOS DETALLE</center>
+<h3 style="color: rgb(226, 43, 202);">
+    <center>UBICACION DETALLE</center>
 
 </h3>
 {% if user.is_authenticated %}
 <table class="table table-dark table-striped">
-    <tr> <td>Marca</td><td>Nombre</td> <td>Color</td><td>Año</td><td>Disponible</td><td>Precio</td>  
+    <tr> <td>Zona</td><td>CodigoPostal</td> <td>Lugar</td><td>Hora</td>
 <tr>
-    <td>{{Todos_Vehiculos.Marca}}</td>
-    <td>{{Todos_Vehiculos.Nombre}}</td>
-    <td>{{Todos_Vehiculos.Color}}</td>
-    <td>{{Todos_Vehiculos.Año}}</td> 
-    <td>{{Todos_Vehiculos.Disponible}}</td>
-    <td>{{Todos_Vehiculos.Precio}}</td>
+    <td>{{Todos_Ubicacion.Zona}}</td>
+    <td>{{Todos_Ubicacion.CodigoPostal}}</td>
+    <td>{{Todos_Ubicacion.Lugar}}</td>
+    <td>{{Todos_Ubicacion.Hora}}</td> 
+  
     {% if user.is_superuser %}
-   <a href="{% url 'vehiculos_editar' Todos_Vehiculos.pk %}"> Editar vehiculos</a>
+   <a href="{% url 'ubicacion_editar' Todos_Ubicacion.pk %}"> Editar Ubicacion</a>
 
-   <a href="{% url 'vehiculos_eliminar' Todos_Vehiculos.pk %}"> Eliminar vehiculos</a>
+   <a href="{% url 'ubicacion_eliminar' Todos_Ubicacion.pk %}"> Eliminar Ubicacion</a>
    {% endif %}
 </tr>
 </table>
@@ -33,7 +32,8 @@
     </div>
   </div>
   -->
-<ul class="list-group list-group-flush">
+  <!--
+    <ul class="list-group list-group-flush">
     {% for comentario in Todos_Vehiculos.comentarios.all %}
     <li class="list-group-item"> {{comentario.autor}} escribio: {{comentario}}</li>
     
@@ -47,19 +47,13 @@
     {% endfor %}
     
     
-</ul>
+</ul> 
+  
+  -->
 
 
 
-    <a href="{% url 'Comentario' Todos_Vehiculos.pk %}"> <button type="button" class="btn btn-info">Agregar Comentario</button>    </a>
- 
+
    
   
 {% endblock content %}
-
-   
-
-
-
-
-   

@@ -24,6 +24,7 @@
           <a class="nav-link" href="{% url 'vehiculos' %}">  Vehiculos   </a>
           <a class="nav-link" href="{% url 'entregas' %}">  Entregas    </a>
           <a class="nav-link" href="{% url 'almacen' %}"> Almacen  </a> 
+          <a class="nav-link" href="{% url 'ubicacion' %}"> Ubicacion  </a> 
 
           
           
@@ -37,14 +38,17 @@
           
 
           <a class="nav-link" href="{%url 'logout' %}">Logout</a>
-            <a class="nav-link" href="{%url 'password_change' %}">Cambiar Contraseña</a>
+           
+          <a class="nav-link" href="{%url 'password_change' %}">Cambiar Contraseña</a>
           
+
+           
         {% else %}
         
 
           <a class="nav-link active" aria-current="page" href="{%url 'login' %}">Login</a>
           <!--<a class="nav-link" href="{%url 'signup' %}">Registrar</a>-->
-           <a class="nav-link" href="{%url 'password_reset' %}">Recuperar Contraseña</a>
+           <!--<a class="nav-link" href="{%url 'password_reset' %}">Recuperar Contraseña</a>-->
        
           {% endif %}
 

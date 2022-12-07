@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <!DOCTYPE html>
@@ -15,9 +16,10 @@
 
     <center>
         <div class="card" style="width: 28rem;">
+    <img src="{% static 'images/aag.jpg' %}" class="card-img-top" alt="...">
     
     
-    <img src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo-shadow.png" class="card-img-top" alt="...">
+
     <div class="card-body">
       <h5 class="card-title"><h1>Venta de Autos </h1></h5>
       <p class="card-text">Los autos son esa tecnología emocionante y segura que nos conecta con todo y con todos. Llevamos el futuro a las calles para que dejes de imaginar y salgas a manejar. Descúbrelo.

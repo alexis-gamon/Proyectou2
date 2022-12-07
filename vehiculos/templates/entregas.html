@@ -1,26 +1,43 @@
 
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<H3 style="color: blueviolet;">
-    <center>ENTREGAS DE VEHICULOS </center>   
-   </H3>
+{% if user.is_superuser %}
+<a href="{% url 'entregas_nuevo' %}">  Entrega Nueva   </a >
+<br>
+{% endif %}
+<h3 style="color: blueviolet;">
+
+    <center> ENTREGAS </center>
+    </h3>
+{% if user.is_authenticated %}
+{% for entregas in Todas_Entregas %}
+
+<a href="{% url 'entregas_detalle' entregas.pk %}" >{{entregas}}  </a>
+<p>{{entregas.Serie}}</p>
 
 
-<table class="table table-dark table-striped">
-    <tr> <td>Serie</td> <td>Cliente</td><td>Fecha</td> </tr> 
-
-    {% for entregas in Entrega %}
-
-<tr>
-    <td>{{entregas.Serie}}</td>
-    <td>{{entregas.Cliente}}</td>
-    <td>{{entregas.Fecha}}</td>
-
-</tr>
-
-
+<div class="card" style="width: 18rem;">
+    <img src="{% static 'images/aag.jpg' %}" class="card-img-top" alt="...">
+    
+    
+    <div class="card-body">
+      
+      <h2 class="card-title">Nombre:{{ entregas.Serie}}</h2>
+      <h3><p class="card-text">{{ entregas.Cliente}}</p> </31>
+      <p class="card-text"><small class="text-muted"> autor:{{ entregas}}</small></p>
+     </div>
+    <ul class="list-group list-group-flush">
+        
 {% endfor %}
-</table>
+
+{% endif %}
+
 {% endblock content %}
+
+
+
+
+
 

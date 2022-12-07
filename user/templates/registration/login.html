@@ -8,8 +8,12 @@
     {{ form.as_p }}
         <input type="submit"></input>
 </form>
-<p>¿No tienes una cuenta Registrate?</p>
-<a class="nav-link" href="{%url 'signup' %}">Registrarse</a>
+<!--<p>¿Desea cambiar su contraseña ?<a class="nav-link" href="{%url 'password_change' %}">Cambiar Contraseña</a></p>
+-->
+<p>¿No tienes una cuenta Registrate?<a class="nav-link" href="{%url 'signup' %}">Registrarse</a></p>
+
+<p>¿Olvidaste tu contraseña?<a class="nav-link" href="{%url 'password_reset' %}">Recuperar Contraseña</a></p>
+
             
 </center>
 

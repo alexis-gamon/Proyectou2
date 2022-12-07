@@ -4,18 +4,18 @@
 
 {% block content %}
 {% if user.is_superuser %}
-<a href="{% url 'vehiculos_nuevo' %}">  Vehiculo Nuevo    </a >
+<a href="{% url 'ubicacion_nuevo' %}">  Ubicacion Nuevo    </a >
 <br>
 {% endif %}
 <h3 style="color: blueviolet;">
 
-    <center> VEHICULOS </center>
+    <center> UBICACION </center>
     </h3>
 {% if user.is_authenticated %}
-{% for vehiculos in Todos_Vehiculos %}
+{% for ubicacion in Todos_Ubicacion %}
 
-<a href="{% url 'vehiculos_detalle' vehiculos.pk %}" >{{vehiculos}}  </a>
-<p>{{vehiculos.Serie}}</p>
+<a href="{% url 'ubicacion_detalle' ubicacion.pk %}" >{{ubicacion}}  </a>
+<p>{{ubicacion.Serie}}</p>
 
 
 <div class="card" style="width: 18rem;">
@@ -24,9 +24,9 @@
     
     <div class="card-body">
       
-      <h2 class="card-title">Nombre:{{ vehiculos.Nombre}}</h2>
-      <h3><p class="card-text">{{ vehiculos.Descripcion}}</p> </31>
-      <p class="card-text"><small class="text-muted"> autor:{{ vehiculos}}</small></p>
+      <h2 class="card-title">Nombre:{{ ubicacion.Zona}}</h2>
+      <h3><p class="card-text">{{ ubicacion.CodigoPostal}}</p> </31>
+      <p class="card-text"><small class="text-muted"> autor:{{ ubicacion}}</small></p>
      </div>
     <ul class="list-group list-group-flush">
         
